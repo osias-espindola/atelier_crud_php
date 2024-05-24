@@ -1,6 +1,6 @@
 <?php
     const DBHOST = "db";
-    const DBBASE = "atelier_crud";
+    const DBNAME = "atelier_crud";
     const DBUSER = "test";
     const DBPASSWORD = "test";
     
@@ -8,14 +8,14 @@
 
     //test pour la conection
     try {
-        $bd = new BDO($dsn , DBUSER , DBPASS );
+        $db = new PDO($dsn , DBUSER , DBPASSWORD );
         echo "Conection reussi" . "<br>";
-    } catch(PDOException $error)
+    } catch(PDOException $error){
         echo " échec la conexion: " . $error->getMessege() . "<br>"; 
+    }
 
 
-
-    $sql = "SELECT* FROM atelier_table";
+    $sql = "SELECT * FROM atelier_table";
    
 
     //on prepar la roquête

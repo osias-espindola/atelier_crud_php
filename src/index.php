@@ -4,15 +4,21 @@
     const DBUSER = "test";
     const DBPASSWORD = "test";
     
+    $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
+
     //test pour la conection
     try {
-        $bd = new BDO()
-        echo "test" . "<br>";
-    } catch (PDOException $error) 
-        echo " echec la conection: " . $error -> getMessege() . "<br>"; 
+        $bd = new BDO($dsn , DBUSER , DBPASS );
+        echo "Conection reussi" . "<br>";
+    } catch(PDOException $error)
+        echo " échec la conexion: " . $error->getMessege() . "<br>"; 
+
+
+
+    $ql = "SELECT* FROM atelier_table";
+
+
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">

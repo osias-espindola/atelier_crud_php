@@ -1,4 +1,5 @@
 <?php //porqua on ne ferme pas le php ?
+require_once("connect.php");
 $first_name = $_POSTE["first_name"];
 $first_name = $_POSTE["last_name"];
 

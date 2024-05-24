@@ -12,3 +12,5 @@ $query->bindValue(":first_name", $first_name); // Corrigido para bindValue
 $query->bindValue(":last_name", $last_name); // Corrigido para bindValue
 
 $query->execute();
+
+header("Location: index.php")

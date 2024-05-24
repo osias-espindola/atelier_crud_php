@@ -12,8 +12,9 @@
         <input type="text"name="first_name">
         <label for="last_name">Nom</label>
         <input type="text"name="last_name">
+        <button>Ajouter</button>
     </form>
-    <a href="indesx.php">Retour</a>
+    <a href="index.php">Retour</a>
 
 </body>
 </html>

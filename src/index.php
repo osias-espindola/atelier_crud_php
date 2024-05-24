@@ -1,6 +1,15 @@
 <?php
-
-
+    const DBHOST = "db";
+    const DBBASE = "atelier_crud";
+    const DBUSER = "test";
+    const DBPASSWORD = "test";
+    
+    //test pour la conection
+    try {
+        $bd = new BDO()
+        echo "test" . "<br>";
+    } catch (PDOException $error) 
+        echo " echec la conection: " . $error -> getMessege() . "<br>"; 
 ?>
 
 

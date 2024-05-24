@@ -6,8 +6,8 @@ if(
     ){
 require_once("connect.php");
 
-$first_name = $_POST["first_name"]; // Corrigido para $_POST
-$last_name = $_POST["last_name"]; // Corrigido para a variável correta e $_POST
+$first_name = strip_tags($_POST["first_name"]); // Corrigido para $_POST
+$last_name = strip_tags($_POST["last_name"]); // Corrigido para a variável correta e $_POST
 
 $sql = "INSERT INTO users (first_name, last_name)
         VALUES (:first_name, :last_name)"; // Adicionado os dois pontos para o placeholder :last_name

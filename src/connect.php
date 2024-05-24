@@ -1,4 +1,3 @@
-<!-- code pour la connection -->
 <?php 
     const DBHOST = "db";
     const DBNAME = "atelier_crud";
@@ -7,10 +6,11 @@
     
     $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
 
-    //test pour la conection
+    // Teste para a conexão
     try {
-        $db = new PDO($dsn , DBUSER , DBPASSWORD );
-        echo "Conection reussi" . "<br>";
+        $db = new PDO($dsn, DBUSER, DBPASSWORD);
+        echo "Conexão reussi" . "<br>";
     } catch(PDOException $error){
-        echo " échec la conexion: " . $error->getMessege() . "<br>"; 
+        echo "Échec la connexion: " . $error->getMessage() . "<br>"; 
     }
+?>

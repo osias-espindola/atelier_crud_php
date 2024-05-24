@@ -6,23 +6,17 @@
     
     $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
 
-    //test pour la conection
+    // Teste para a conexão
     try {
-        $db = new PDO($dsn , DBUSER , DBPASSWORD );
-        echo "Conection reussi" . "<br>";
+        $db = new PDO($dsn, DBUSER, DBPASSWORD);
+        echo "Conexão reussi" . "<br>";
     } catch(PDOException $error){
-        echo " échec la conexion: " . $error->getMessege() . "<br>"; 
+        echo "Échec la connexion: " . $error->getMessage() . "<br>"; 
     }
 
-
     $sql = "SELECT * FROM atelier_table";
-   
-
-    //on prepar la roquête
     $query = $db->prepare($sql);
-    //on execute la roquête
     $query->execute();
-    //on recupere le donnes sous forme de tableu associative
     $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
     print_r($users);
@@ -36,32 +30,24 @@
     <title>Atelier CRUD</title>
 </head>
 <body>
-    <h1>Liste des Ultilisatuer</h1>
+    <h1>Liste des Utilisateurs</h1>
     <table>
         <thead>
-            <td>id</td>
-            <td>prenome</td>
-            <td>nom</td>
+            <tr>
+                <th>id</th>
+                <th>prenom</th>
+                <th>nom</th>
+            </tr>
         </thead>
+        <tbody>
+            <?php foreach($users as $user): ?>
+                <tr>
+                    <td><?= htmlspecialchars($user['id']) ?></td>
+                    <td><?= htmlspecialchars($user['first_name']) ?></td>
+                    <td><?= htmlspecialchars($user['last_name']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
     </table>
-    <tbody>
-        <!-- pour chaque Ultilisatuer récupéré dans $users, on afiche
-         -->
-
-        <?php 
-        foreach($users as $user){
-        ?>
-            <tr>;
-                <td><?= $user[id]?><br>;
-                <td><?= $user[first_name]?><br>;         
-                <td><?= $user[last_name]?><br>;
-            </tr>;
-        <?php   
-
-        } 
-            
-        ?>
-    </tbody>
-    
 </body>
 </html>

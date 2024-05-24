@@ -15,9 +15,17 @@
 
 
 
-    $ql = "SELECT* FROM atelier_table";
+    $sql = "SELECT* FROM atelier_table";
+   
 
+    //on prepar la roquête
+    $query = $db->prepare($sql);
+    //on execute la roquête
+    $query->execute();
+    //on recupere le donnes sous forme de tableu associative
+    $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
+    print_r($users);
 ?>
 
 <!DOCTYPE html>

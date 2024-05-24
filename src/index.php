@@ -37,6 +37,7 @@
                 <th>id</th>
                 <th>prenom</th>
                 <th>nom</th>
+                <th>action</th>
             </tr>
         </thead>
         <tbody>
@@ -45,6 +46,10 @@
                     <td><?= htmlspecialchars($user['id']) ?></td>
                     <td><?= htmlspecialchars($user['first_name']) ?></td>
                     <td><?= htmlspecialchars($user['last_name']) ?></td>
+                    <td>
+                        <a href="user.php?id="></a>
+                    </td>
+                </tr>
                 </tr>
             <?php endforeach; ?>
         </tbody>

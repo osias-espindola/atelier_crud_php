@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Ajout d'un utilisateur</h1>
-    <form action="" method="post">
+    <form action="create.php" method="post">
         <label for="first_name">Prénom</label>
         <input type="text"name="first_name">
         <label for="last_name">Nom</label>

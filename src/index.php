@@ -45,11 +45,22 @@
         </thead>
     </table>
     <tbody>
-        <tr>
-            <td>0</td>
-            <td>Luiza</td>
-            <td>Maria</td>
-        </tr>
+        <!-- pour chaque Ultilisatuer récupéré dans $users, on afiche
+         -->
+
+        <?php 
+        foreach($users as $user){
+        ?>
+            <tr>;
+                <td><?= $user[id]?><br>;
+                <td><?= $user[first_name]?><br>;         
+                <td><?= $user[last_name]?><br>;
+            </tr>;
+        <?php   
+
+        } 
+            
+        ?>
     </tbody>
     
 </body>

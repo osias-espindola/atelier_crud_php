@@ -1,4 +1,9 @@
 <?php // Não é necessário fechar a tag PHP se o arquivo contém apenas código PHP.
+
+if(
+    isset($_POST["first_name"]) && !empty($_POST["first_name"]);
+    && isset($_POST["last_name"]) && !empty($_POST["last_name"]);
+    ){
 require_once("connect.php");
 
 $first_name = $_POST["first_name"]; // Corrigido para $_POST
@@ -14,3 +19,6 @@ $query->bindValue(":last_name", $last_name); // Corrigido para bindValue
 $query->execute();
 
 header("Location: index.php")
+} else {
+    echo "Ramplir le formulaire!"
+}

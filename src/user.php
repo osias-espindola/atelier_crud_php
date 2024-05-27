@@ -1,4 +1,5 @@
 <?php
+if(isset($_GET("id")) && !empty($_GET("id"))){
     require_once("connect.php");
     echo $_GET["id"];
     $id = strip_tags($_GET["id"]);
@@ -9,6 +10,16 @@
     $query->execute();
     $user = $query->fetch();
     print_r($user);
+//on vererifis si l'ultilisater existe
+    if ($user) {
+        header("location: index.php")
+    } else {
+
+    }
+
+} else{
+        header("location: index.php")
+}
 ?>
 
 <!DOCTYPE html>

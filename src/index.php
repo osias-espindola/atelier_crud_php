@@ -47,7 +47,7 @@
                     <td><?= htmlspecialchars($user['first_name']) ?></td>
                     <td><?= htmlspecialchars($user['last_name']) ?></td>
                     <td>
-                        <a href="user.php?id="></a>
+                        <a href="user.php?id="<?= $user["id"]></a>
                     </td>
                 </tr>
                 </tr>

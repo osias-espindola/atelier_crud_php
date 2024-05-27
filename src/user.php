@@ -1,4 +1,6 @@
 <?php
+
+// on verifis qu' il ya  bien une id l' url et que ultilizetour correspondent existe
 if(isset($_GET['id']) && !empty($_GET['id'])){
     require('connect.php');
     
@@ -16,6 +18,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         header("Location: index.php");
         exit;
     } else {
+       
         require('disconnect.php');
         exit;
     }

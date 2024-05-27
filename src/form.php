@@ -18,6 +18,6 @@
     <button>Ajouter</button>
     </form>
     <a href="atelier.php">Retour</a> 
-    <?php echo print_r($_POST);?>
+    <!-- <?php echo print_r($_POST);?> -->
 </body>
 </html>

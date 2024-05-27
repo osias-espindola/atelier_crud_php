@@ -23,7 +23,11 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 
         $query = $bd->prepare($sql);
 
-        $query->blindValue(":id" , $id )
+        $query->blindValue(":id" , $id , PDO::PARAM_INT);
+
+        $query->execute();
+
+        header("Location: index.php");
 
     }
 

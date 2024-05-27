@@ -40,7 +40,7 @@ Affichage d'une page par utilisateur :
 -   [x] Nettoyer l'`id` avec `strip_tags()` pour retirer les potentiels caractères spéciaux placés par erreur ou de façon malintentionnée.
 -   [x] Dans `user.php`, créer une requête SQL permettant d'afficher l'utilisateur pour lequel l'`id` correspond à celle présente dans l'url.
 -   [x] Préparer et exécuter la requête.
--   [x] Afficher le prénom et le nom de l'utilisateur en titre de la page et en <h1>.
+-   [] Afficher le prénom et le nom de l'utilisateur en titre de la page et en <h1>.
 
 Suppression d'un utilisateur
 

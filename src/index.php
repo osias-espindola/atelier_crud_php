@@ -42,7 +42,7 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
     <title>CRUD</title>
 </head>
 <body>
-    <h1>Liste des utilisateurices</h1>
+    <h1>Liste des utilisateur</h1>
     <table>
         <thead>
             <td>Id</td>
@@ -69,7 +69,7 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
                         <td> <?= $user['last_name'] ?></td> 
                     
                         <td> 
-                            <a href='user.php?id=<?=$user["id"]?>'>Voir l'utilisateurice</a></td>
+                            <a href='user.php?id=<?=$user["id"]?>'>Voir l'utilisateur</a></td>
                             <td> 
                             <a href='update.php?id=<?=$user["id"]?>'>Mettre à jour</a></td>
                             <td> 

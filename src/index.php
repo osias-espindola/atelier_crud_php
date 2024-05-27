@@ -75,7 +75,7 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
                     <?php
                 }
             ?>
-            <a href="form.php"/>ajoutez un.e utilisateurice</a> </br>
+            <a href="form.php"/>ajoutez un utilisateur</a> </br>
         </tbody>
     </table>
 </body>

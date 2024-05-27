@@ -20,6 +20,8 @@ if (
     // Execute the query
     $query->execute();
 
+    $_SESSION["message"] = "Utilisateur ajouté(e)";
+
     // Redirect to another page after successful insertion
     header('Location: atelier.php');
     exit;

@@ -17,7 +17,7 @@
     <input type="text" name='last_name' required>
     <button>Ajouter</button>
     </form>
-    <a href="atelier.php">Retour</a> 
+    <a href="index.php">Retour</a> 
     <!-- <?php echo print_r($_POST);?> -->
 </body>
 </html>

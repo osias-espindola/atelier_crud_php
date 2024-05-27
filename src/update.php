@@ -16,11 +16,12 @@ if($_POST){
         //dans la colone first/last_name met la valeur first/last_name du formulaire
 
         $query = $db->prepare($sql);
+
         $query->bindValue(":id", $id, PDO::PARAM_INT);
         $query->bindValue(":first_name", $first_name, PDO::PARAM_STR); // Correction de frist_name à first_name
         $query->bindValue(":last_name", $last_name, PDO::PARAM_STR);
         $query->execute();
-        header("Location: atelier.php"); 
+        header("Location: index.php"); 
     } else { 
         echo "remplissez le formulaire";
     }

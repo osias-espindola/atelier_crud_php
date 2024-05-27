@@ -69,11 +69,10 @@ if(!$user) {
         Nom
     </label>
     <input type="text" name='last_name' value="<?= $user['last_name'] ?>" required>
-    //
     <input type="hidden" name="id" value="<?= $user['id'] ?>" required>
     <button>Modifier</button>
     </form>
-    <a href="atelier.php">Retour</a> 
+    <a href="index.php">Retour</a> 
     <!-- <?php echo print_r($_POST);?> -->
 </body>
 </html>

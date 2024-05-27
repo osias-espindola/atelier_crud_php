@@ -23,7 +23,7 @@ if (
     $_SESSION["message"] = "Utilisateur ajouté(e)";
 
     // Redirect to another page after successful insertion
-    header('Location: atelier.php');
+    header('Location: index.php');
     exit;
 } else {
     echo "Veuillez remplir le formulaire.";

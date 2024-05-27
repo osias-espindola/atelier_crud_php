@@ -1,39 +1,32 @@
-<?php
+<?php 
+//revérifie qu'il y a bien une ID dans l'URL et que l'utilisateur correspondant existe
+if (isset($_GET['id']) && !empty($_GET['id'])) 
+ {
+require_once("connect.php");
+$id = strip_tags($_GET["id"]);
+$sql = "SELECT * FROM users WHERE id = :id";
+//On prépare la requête dans $sql,donc récupérer l'id unique
+$query = $db->prepare($sql);
+//on accroche la valeur id de la requête à celle de la variable $id
+$query->bindValue(':id', $id, PDO::PARAM_INT);
+//exécuter la requête
+$query->execute();
+//besoin d'une seule donnée donc fetch uniquement et non pas fetchAll
+$user = $query->fetch(); 
 
-// on verifis qu' il ya  bien une id l' url et que ultilizetour correspondent existe
-if(isset($_GET['id']) && !empty($_GET['id'])){
-    require('connect.php');
-    
-    $id = strip_tags($_GET['id']);
-    $sql = "SELECT * FROM users WHERE id = :id";
-    $query = $db->prepare($sql);
-   
-    // Bind the value of the id from the request to the $id variable
-    $query->bindValue(':id', $id, PDO::PARAM_INT);
-    $query->execute();
-    $user = $query->fetch();
-    
-    // Verify if the user exists
-    if ($user) {
-        header("Location: index.php");
-        exit;
-    } else {
-        //on gére la supression de l'utilisetour
-        $sql = "DELETE FROM users WHERE id = :id";
-
-        $query = $bd->prepare($sql);
-
-        $query->blindValue(":id" , $id , PDO::PARAM_INT);
-
-        $query->execute();
-
-        header("Location: index.php");
-
-    }
-
-} else {
-    header("Location: index.php");
-    exit;
+//s'il n'y a rien dans $user on redirige vers l'index, on vérifie si l'utilisateur existe dans la BDD
+if(!$user) {
+    header('Location: atelier.php');
+}  else {
+//on gère la suppression de l'utilisateur
+$sql = "DELETE FROM users WHERE id = :id";
+$query = $db->prepare($sql);
+$query->bindValue(':id', $id, PDO::PARAM_INT);
+$query->execute();
+header('Location: atelier.php');
 }
-?>
 
+} else { header('Location: atelier.php');
+
+} //si ça a foiré avec un mauvais ID ce else là sert à ça
+?>

@@ -39,11 +39,11 @@ $query->bindValue(':id', $id, PDO::PARAM_INT);
 $query->execute();
 $user = $query->fetch(); 
 if(!$user) {
-    header('Location: atelier.php');
+    header('Location: index.php');
 }  else {   require_once("disconnect.php");
 }
 
-} else { header('Location: atelier.php');
+} else { header('Location: index.php');
 
 }
 

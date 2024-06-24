@@ -1,8 +1,8 @@
 <?php 
 const DBHOST = 'db';
 const DBNAME = 'atelier_crud';
-const DBUSER = 'test';
-const DBPASS = 'test';
+const DBUSER = 'gmor';
+const DBPASS = 'mor_password';
 
     //c'est ça qu'il nous manquait ! le ";" veut lui signifier "ça y est c'est fait"
 $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
